@@ -11,15 +11,15 @@ class OTAUpdater:
         self.filename = filename
         self.ssid = ssid
         self.password = password
-        self.repo_url = repo_url
-        self.version_url = repo_url + 'main/version.json'
-        self.firmware_url = repo_url + 'main/' + filename
+                self.repo_url = repo_url
+                self.version_url = repo_url + 'main/version.json'
+                self.firmware_url = repo_url + 'main/' + filename   
 
-        # get the current version (stored in version.json)
-        if 'version.json' in os.listdir():    
-            with open('version.json') as f:
-                self.current_version = json.load(f)['version']
-            print(f"Current device firmware version is '{self.current_version}'")
+                # get the current version (stored in version.json)
+                if 'version.json' in os.listdir():    
+                    with open('version.json') as f:
+                        self.current_version = json.load(f)['version']
+                    print(f"Current device firmware version is '{self.current_version}'")
 
         else:
             self.current_version = 0

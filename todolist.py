@@ -99,7 +99,6 @@ def add_item():
     my_entry.delete(0, END)
     date = datetime.datetime.now()
 
-
 def cross_item():
     my_list.itemconfig(
         my_list.curselection(),

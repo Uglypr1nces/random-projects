@@ -2,19 +2,15 @@ from PIL import Image
 import keyboard
 import pygame
 
-# Initialize Pygame mixer
 pygame.mixer.init()
-
-# Load the sound
 coolsound = pygame.mixer.Sound("content/coolbeatsound.wav")
 
 pressed_key = ""
 
-while pressed_key != "e" and pressed_key != "E":
+while pressed_key != "e" or pressed_key != "E":
     if keyboard.is_pressed("e") or keyboard.is_pressed("E"):
         pressed_key = "e"
         
-        # Play the sound
         coolsound.play(-1)
 
         gif_path = "content/pooping.gif"
@@ -30,6 +26,5 @@ while pressed_key != "e" and pressed_key != "E":
 
         gif_image.close()
 
-# Stop the sound and quit Pygame mixer
 coolsound.stop()
 pygame.mixer.quit()
